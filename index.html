@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Habit Tracker</h1>
+    <div class="add-habit-row">
+      <input type="text" id="newHabitName" placeholder="e.g. Drink water">
+      <button id="addHabitBtn" class="btn">+ Add Habit</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="habitList"></div>
+    <p class="hint hidden" id="emptyHint">No habits yet. Add one above to get started.</p>
+  </main>
+</div>
+
+<template id="habitCardTemplate">
+  <div class="panel habit-card">
+    <div class="panel-header habit-card-header">
+      <h2 class="habit-name"></h2>
+      <button type="button" class="btn icon delete-habit" title="Delete habit">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg>
+      </button>
+    </div>
+
+    <div class="result-row">
+      <div class="result-box">
+        <span class="result-label">Current Streak</span>
+        <span class="result-value current-streak-value">0</span>
+      </div>
+      <div class="result-box">
+        <span class="result-label">Best Streak</span>
+        <span class="result-value best-streak-value">0</span>
+      </div>
+    </div>
+
+    <div class="month-nav">
+      <button type="button" class="btn small ghost prev-month" title="Previous month">&#8249;</button>
+      <span class="month-label"></span>
+      <button type="button" class="btn small ghost next-month" title="Next month">&#8250;</button>
+    </div>
+
+    <div class="weekday-header">
+      <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+    </div>
+    <div class="day-grid"></div>
+  </div>
+</template>
+
+<template id="dayCellTemplate">
+  <button type="button" class="day-cell"><span class="day-num"></span></button>
+</template>
+
+<script src="script.js"></script>
+</body>
+</html>
